@@ -162,33 +162,40 @@ public class Main {
 			
 			Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/db_springboot","root","sasa");
 			
+			//SELECT
 			PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM  comunas");
 			ResultSet resultSet = preparedStatement.executeQuery();
 			
-			
-			PDDocument pdf = new PDDocument();
-			PDPage pagina = new PDPage();
-			pdf.addPage(pagina);
-			PDPageContentStream contentStream = new PDPageContentStream(pdf, pagina);
-			contentStream.beginText();
-			contentStream.setFont(PDType1Font.TIMES_ROMAN, 12);
-			contentStream.newLineAtOffset(25, 750);
-			contentStream.setLeading(14.5f);
-
 			while (resultSet.next()) {
-				contentStream.showText("Comuna: " + resultSet.getString("nombre"));
-				contentStream.newLine();
 				System.out.println ("Comuna: " + resultSet.getString("nombre"));
 			}
 			
-			contentStream.endText();
-			contentStream.close();
-			pdf.save("reporte.pdf");
+			//INSERT
+			preparedStatement = connection.prepareStatement("INSERT INTO accesos VALUES (?,?,?)");
+			preparedStatement.setString(1,null);
+			preparedStatement.setString(2,"cubo_k@hotmail.com");
+			preparedStatement.setString(3,"Ahola123");
+			preparedStatement.executeUpdate();
+			
+			//UPDATE
+			String correoNuevo ="insertCorreoNuevo@gmail.com";
+			preparedStatement = connection.prepareStatement("UPDATE accesos set email='"+ correoNuevo + "' where email='cubo_k@hotmail.com' ");
+			preparedStatement.executeUpdate();
+			
+			//TRUNCATE
+//			preparedStatement = connection.prepareStatement("TRUNCATE TABLE accesos");
+//			preparedStatement.executeUpdate();
+			
+			connection.close();
 			
 		} catch (Exception e) {
 			System.out.println("Error de conexion con BDD :" + e.getMessage() );
 		}
-
+		
+		//C CREATE 		INSERT	
+		//R READ		SELECT
+		//U UPDATE		UPDATE (NO HAY)
+		//D DELETE		DELETE O TRUNCATE
 		
 
 		System.out.println("######################## FIN ########################");
