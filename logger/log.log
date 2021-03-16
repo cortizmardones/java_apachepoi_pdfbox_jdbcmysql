@@ -1,0 +1,20 @@
+######################## INICIO ########################
+Archivo excel generado correctamente
+Archivo PDF generado correctamente
+Comuna: Santiago
+Comuna: Puente Alto
+Comuna: San Bernardo
+Comuna: Las Condes
+Comuna: Renca
+Comuna: Maipu
+Comuna: Conchali
+Comuna: La Pintana
+Comuna: La Florida
+Comuna: Peñalolen
+Comuna: Vitacura
+Comuna: Estación Central
+Comuna: San Miguel
+Comuna: Providencia
+Comuna: La Granja
+Error de conexion con BDD :Duplicate entry 'cubo_k@hotmail.com' for key 'accesos.email_UNIQUE'
+######################## FIN ########################

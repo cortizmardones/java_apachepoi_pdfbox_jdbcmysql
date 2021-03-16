@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
+import org.apache.log4j.Logger;
 import org.apache.pdfbox.pdmodel.PDDocument;
 import org.apache.pdfbox.pdmodel.PDDocumentInformation;
 import org.apache.pdfbox.pdmodel.PDPage;
@@ -27,10 +28,14 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import Model.Persona;
 
 public class Main {
+	
+	static Logger log = Logger.getLogger(Main.class.getName());
 
 	public static void main(String[] args) throws SQLException, InstantiationException, IllegalAccessException {
-
+		
+		
 		System.out.println("######################## INICIO ########################");
+		log.info("######################## INICIO ########################");
 
 		ArrayList<String> listaTitulos = new ArrayList<String>();
 		listaTitulos.add("Nombre");
@@ -96,8 +101,10 @@ public class Main {
 			FileOutputStream salida = new FileOutputStream(archivo);
 			workbook.write(salida);
 			System.out.println("Archivo excel generado correctamente");
+			log.info("Archivo excel generado correctamente");
 		} catch (Exception e) {
 			System.out.println("No se pudo generar archivo excel por : " + e.getMessage());
+			log.info("No se pudo generar archivo excel por : " + e.getMessage());
 		}
 
 		// PDF
@@ -148,12 +155,15 @@ public class Main {
 //          	contentStream.drawImage(pdImage, 0, 200);
 
 			contentStream.close();
-
 			pdf.save("reporte.pdf");
+			pdf.close();
+			
 			System.out.println("Archivo PDF generado correctamente");
+			log.info("Archivo PDF generado correctamente");
 
 		} catch (Exception e) {
 			System.out.println("No se pudo generar archivo pdf por : " + e.getMessage());
+			log.info("No se pudo generar archivo pdf por : \" + e.getMessage()");
 		}
 		
 		
@@ -168,6 +178,7 @@ public class Main {
 			
 			while (resultSet.next()) {
 				System.out.println ("Comuna: " + resultSet.getString("nombre"));
+				log.info("Comuna: " + resultSet.getString("nombre"));
 			}
 			
 			//INSERT
@@ -189,7 +200,8 @@ public class Main {
 			connection.close();
 			
 		} catch (Exception e) {
-			System.out.println("Error de conexion con BDD :" + e.getMessage() );
+			System.out.println("Error de conexion con BDD :" + e.getMessage());
+			log.info("Error de conexion con BDD :" + e.getMessage());
 		}
 		
 		//C CREATE 		INSERT	
@@ -199,6 +211,7 @@ public class Main {
 		
 
 		System.out.println("######################## FIN ########################");
+		log.info("######################## FIN ########################");
 
 	}
 
