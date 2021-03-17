@@ -1,20 +1,19 @@
-######################## INICIO ########################
-Archivo excel generado correctamente
-Archivo PDF generado correctamente
-Comuna: Santiago
-Comuna: Puente Alto
-Comuna: San Bernardo
-Comuna: Las Condes
-Comuna: Renca
-Comuna: Maipu
-Comuna: Conchali
-Comuna: La Pintana
-Comuna: La Florida
-Comuna: Peñalolen
-Comuna: Vitacura
-Comuna: Estación Central
-Comuna: San Miguel
-Comuna: Providencia
-Comuna: La Granja
-Error de conexion con BDD :Duplicate entry 'cubo_k@hotmail.com' for key 'accesos.email_UNIQUE'
-######################## FIN ########################
+2021-03-17 00:38:36,669 INFO  - ######################## INICIO ########################
+2021-03-17 00:38:37,152 INFO  - Archivo excel generado correctamente
+2021-03-17 00:38:37,370 INFO  - Archivo PDF generado correctamente
+2021-03-17 00:38:37,933 INFO  - Comuna: Santiago
+2021-03-17 00:38:37,933 INFO  - Comuna: Puente Alto
+2021-03-17 00:38:37,933 INFO  - Comuna: San Bernardo
+2021-03-17 00:38:37,933 INFO  - Comuna: Las Condes
+2021-03-17 00:38:37,934 INFO  - Comuna: Renca
+2021-03-17 00:38:37,934 INFO  - Comuna: Maipu
+2021-03-17 00:38:37,934 INFO  - Comuna: Conchali
+2021-03-17 00:38:37,934 INFO  - Comuna: La Pintana
+2021-03-17 00:38:37,934 INFO  - Comuna: La Florida
+2021-03-17 00:38:37,934 INFO  - Comuna: Peñalolen
+2021-03-17 00:38:37,934 INFO  - Comuna: Vitacura
+2021-03-17 00:38:37,934 INFO  - Comuna: Estación Central
+2021-03-17 00:38:37,934 INFO  - Comuna: San Miguel
+2021-03-17 00:38:37,934 INFO  - Comuna: Providencia
+2021-03-17 00:38:37,934 INFO  - Comuna: La Granja
+2021-03-17 00:38:37,941 INFO  - ######################## FIN ########################
